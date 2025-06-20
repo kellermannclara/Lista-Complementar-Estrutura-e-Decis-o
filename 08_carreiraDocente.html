@@ -20,9 +20,37 @@
 
     //ENTRADA
 
+    const anosCarreira = Number(prompt(`Informe quantos anos de carreira você tem`));
+    const projetosPesquisas = Number(prompt(`Informe a qunatidade de projetos de pesquisas que já coordenou`));
+    const projetosExtencao = Number(prompt(`Informe a qunatidade de projetos de extenção que já orientou`));
+    const tccs = Number(prompt(`Informe a qunatidade de TCCs que já orientou`));
 
-    //PROCESSAMENTO
+    //PROCESSAMENTO 
 
+    const pontosCarreira = (anosCarreira * 2.5);
+    const pontosPesquisa = (projetosPesquisas * 5);
+    const pontosExtencao = (projetosExtencao * 5);
+    const pontostcc = (tccs * 3);
+
+    let pontos = (pontosCarreira + pontosPesquisa + pontosExtencao + pontostcc);
+    let classificacao;
+    let mensagem = `Classificação: `;
+
+    if (pontos <= 30) {
+        classificacao = `CONVIDADO`;
+        mensagem = mensagem + `${classificacao}`;
+        alert(mensagem);
+    } else if (pontos <= 50) {
+        classificacao = `AGREGADO`;
+        mensagem = mensagem + `${classificacao}`;
+        alert(mensagem);
+    } else if ( pontos > 50) {
+        classificacao = `TITULAR`;
+        mensagem = mensagem + `${classificacao}`;
+        alert(mensagem);
+    } else {
+        alert(`Valor inválido`);
+    }
     
     //SAÍDA
 

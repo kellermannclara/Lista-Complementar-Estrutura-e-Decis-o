@@ -11,9 +11,21 @@
 
     //ENTRADA
 
+    const graus = Number (prompt(`Informe o valor da temperatura em graus Celcius`));
 
     //PROCESSAMENTO
 
+    if (graus < 100) {
+        alert(`Está muito baixa!`);
+    } else if (graus <= 200) {
+        alert(`Está baixa!`);
+    } else if (graus > 200 && graus < 500) {
+        alert(`Está normal!`);
+    } else if (graus > 500) {
+        alert(`Está muito alta!`);
+    } else {
+        alert(`Valor inválido`);
+    }
     
     //SAÍDA
 

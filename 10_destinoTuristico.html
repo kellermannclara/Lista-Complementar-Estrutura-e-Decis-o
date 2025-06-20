@@ -13,9 +13,31 @@
 
     //ENTRADA
 
+    const transporteSP = Number(prompt(`Informe o preço do transporte aéreo para São Paulo`));
+    const transporteRJ = Number(prompt(`Informe o preço do transporte aéreo para Rio de Janeiro`));
+    const hotelSP = Number(prompt(`Informe o preço do hotel em São Paulo`));
+    const hotelRJ = Number(prompt(`Informe o preço do hotel no Rio de Janeiro`));
+    const dias = Number(prompt(`Quanto dias pretende passar no destino?`));
 
     //PROCESSAMENTO
 
+    const custoSP = transporteSP + (hotelSP * dias);
+    const custoRJ = transporteRJ + (hotelRJ * dias);
+
+    let custoFinal;
+    let destinoFinal;
+
+    if (custoSP < custoRJ) {
+        destinoFinal = `São Paulo`;
+        custoFinal = custoSP;
+        alert (`O destino mais ecônomico é ${destinoFinal} com o custo de ${custoFinal}`);
+    } else if (custoRJ < custoSP) {
+        destinoFinal = `Rio de Janeiro`;
+        custoFinal = custoRJ
+        alert (`O destino mais ecônomico é ${destinoFinal} com o custo de ${custoFinal}`);
+    } else {
+        alert(`Ambos destinos tem custos iguais`);
+    }
     
     //SAÍDA
 
