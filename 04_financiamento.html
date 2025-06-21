@@ -11,10 +11,29 @@
 
     //ENTRADA
 
+    const valorImovel = Number(prompt(`Informe o valor do imóvel`));
+    const anos = Number(prompt(`Informe em quantos anos será realizada o financiamento`));
+    const salario = Number(prompt(`Informe o salário do comprador`));
 
     //PROCESSAMENTO
-
     
+    /*numero de anos *12
+    valor do imovel / pelo numeor de meses (prestaçao mensal)
+    salario * 30 / 100 
+    se resultado for maior que a prestação financiamento nao concedido*/
+    let meses = (anos * 12);
+    let prestacao = valorImovel / meses;
+    prestacao = Math.floor(prestacao);
+    let verifsalario = (salario * 30) / 100;
+    let mensagem = `O valor da prestação mensal ficará em $${prestacao}. `
+    if (verifsalario < prestacao) {
+        mensagem = mensagem + `O financiamento será concedido`;
+    } else {
+        mensagem = mensagem + `O financiamento infelizmente não poderáser concedido`;
+    }
+
     //SAÍDA
+
+    alert(mensagem);
 
 </script>
