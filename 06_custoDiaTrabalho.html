@@ -16,10 +16,30 @@
 
     //ENTRADA
 
+    const viagens = Number(prompt(`Informe quantas viagens foram realizadas por dia`));
+    const cargo = prompt(`Informe o cargo que você ocupa`);
 
     //PROCESSAMENTO
 
-    
+    let porcentagem;
+    let diaria = 100;
+    if (cargo == "Motorista" && viagens <= 10) {
+        porcentagem = (diaria * 20) / 100;
+        diaria = diaria + porcentagem;
+    } else if (cargo == "Motorista" && viagens > 10) {
+        porcentagem = (diaria * 35) / 100;
+        diaria = diaria + porcentagem;
+    } else if (cargo == "Cobrador" && viagens <= 10) {
+        porcentagem = 0;
+        diaria = diaria + porcentagem;
+    } else if (cargo == "Motorista" && viagens > 10) {
+        porcentagem = (diaria * 10) / 100;
+        diaria = diaria + porcentagem;
+    } else {
+        alert(`Valor Invalido`);
+    }
     //SAÍDA
+
+    alert(`O cargo do usuário é ${cargo} e o valor recebido pelas viagens é de R$${diaria}`);
 
 </script>
