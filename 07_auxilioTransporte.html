@@ -19,7 +19,38 @@
 
     //PROCESSAMENTO
 
-    if 
+    let desconto;
+    let porcentagem;
+
+    if (veiculo == `Sim`) {
+
+        if (auxilio == `Sim`) {
+            desconto = (6 / 100) * salario;
+            porcentagem = salario - desconto + 200;
+            alert(`Será descontado R$${desconto} e seu salário final ficará em R$${porcentagem}`);
+        } else if (auxilio == `Não`) {
+            desconto = (6 / 100) * salario;
+            porcentagem = salario - desconto + 200;
+            alert(`Será descontado R$${desconto} e seu salário final ficará em R$${porcentagem}`);
+        } else {
+            alert(`Valor invalido`);
+        }
+
+    } else if (veiculo == `Não`) {
+        if (auxilio == `Sim`) {
+            desconto = (6 / 100) * salario;
+            porcentagem = salario - desconto + 150;
+            alert(`Será descontado R$${desconto} e seu salário final ficará em R$${porcentagem}`);
+        } else if (auxilio == `Não`) {
+            desconto = (6 / 100) * salario;
+            porcentagem = salario - desconto + 150;
+            alert(`Será descontado R$${desconto} e seu salário final ficará em R$${porcentagem}`);
+        } else {
+            alert(`Valor invalido`);
+        }
+    } else {
+        alert(`Valor inválido`);
+    }
     
     //SAÍDA
 
